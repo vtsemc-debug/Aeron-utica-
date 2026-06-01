@@ -13,8 +13,29 @@ body{
     font-family:Arial,sans-serif;
 }
 
+html,
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+}
+
+body{
+    background:#041524;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
 .banner{
+    width:100%;
+    min-height:100vh;
     padding:20px;
+    box-sizing:border-box;
+}
+    *{
+    outline:1px solid red;
 }
 
 h1{
@@ -29,16 +50,17 @@ h1{
 }
 
 .aviao{
+    display:block;
     width:100%;
+    max-width:100%;
+    height:auto;
     border-radius:15px;
 }
+    
 
 .card{
-    background:#0c2238;
-    margin:15px 0;
-    padding:15px;
-    border-radius:15px;
-    border-left:5px solid #66b3ff;
+    width:100%;
+    box-sizing:border-box;
 }
 
 .card h2{
