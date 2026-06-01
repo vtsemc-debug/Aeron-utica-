@@ -22,11 +22,25 @@ body{
     overflow-x:hidden;
 }
 
-body{
-    background:#041524;
-    color:white;
-    font-family:Arial,sans-serif;
+    details{
+    transition:0.3s;
 }
+
+details[open]{
+    background:#12304d;
+}
+    
+    .card{
+    width:100%;
+    box-sizing:border-box;
+    background:#0c2238;
+    margin:15px 0;
+    padding:15px;
+    border-radius:15px;
+    border-left:5px solid #66b3ff;
+    box-shadow:0 0 15px rgba(102,179,255,.15);
+}
+
 
 .banner{
     width:100%;
@@ -38,16 +52,10 @@ body{
 h1{
     text-align:center;
     color:#66b3ff;
-    font-size:2.8rem;
+    font-size:clamp(2rem,8vw,3rem);
+    text-shadow:0 0 10px rgba(102,179,255,.5);
 }
 
-    .card{
-    background:#0c2238;
-    margin:15px 0;
-    padding:15px;
-    border-radius:15px;
-    border-left:5px solid #66b3ff;
-}
 
 summary{
     font-size:1.4rem;
@@ -90,10 +98,7 @@ details p{
 }
     
 
-.card{
-    width:100%;
-    box-sizing:border-box;
-}
+
 
 .card h2{
     margin-top:0;
@@ -107,7 +112,15 @@ details p{
 
 <div class="banner">
 
-    <details class="card">
+    <div class="topo">
+        <h1>✈️ ENGENHARIA AERONÁUTICA</h1>
+        <p>Feira de Ciências • 3º G</p>
+    </div>
+
+    <img class="aviao"
+    src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05">
+    
+    <details class="card" name="accordion">
     <summary>📖 O que é?</summary>
 
     <p>
@@ -117,7 +130,7 @@ details p{
     </p>
 </details>
 
-<details class="card">
+<details class="card" name="accordion">
     <summary>⚙️ Princípios</summary>
     <p>
         Aerodinâmica, mecânica, eletrônica,
@@ -125,7 +138,7 @@ details p{
     </p>
 </details>
 
-<details class="card">
+<details class="card" name="accordion">
     <summary>🎓 Formação</summary>
     <p>
         Graduação de aproximadamente 5 anos,
@@ -133,7 +146,7 @@ details p{
     </p>
 </details>
 
-<details class="card">
+<details class="card" name="accordion">
     <summary>📊 ENEM</summary>
     <p>
         A nota varia por universidade, geralmente
@@ -141,7 +154,7 @@ details p{
     </p>
 </details>
 
-<details class="card">
+<details class="card" name="accordion">
     <summary>🚀 Áreas de atuação</summary>
     <p>
         Aviação civil, militar, manutenção,
@@ -149,5 +162,15 @@ details p{
     </p>
 </details>
 
+    <details class="card">
+    <summary>🌎 Curiosidades</summary>
+    <p>
+        O Brasil é referência mundial na fabricação de aeronaves.
+        A Engenharia Aeronáutica também contribui para satélites,
+        foguetes e novas tecnologias de transporte aéreo.
+    </p>
+</details>
+
+</div>
 </body>
 </html>
