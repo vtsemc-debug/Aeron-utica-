@@ -41,6 +41,41 @@ h1{
     font-size:2.8rem;
 }
 
+    .card{
+    background:#0c2238;
+    margin:15px 0;
+    padding:15px;
+    border-radius:15px;
+    border-left:5px solid #66b3ff;
+}
+
+summary{
+    font-size:1.4rem;
+    font-weight:bold;
+    color:#66b3ff;
+    cursor:pointer;
+    list-style:none;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::after{
+    content:"▼";
+    float:right;
+    transition:.3s;
+}
+
+details[open] summary::after{
+    transform:rotate(180deg);
+}
+
+details p{
+    margin-top:15px;
+    line-height:1.6;
+}
+
 .topo{
     text-align:center;
     margin-bottom:20px;
@@ -72,53 +107,47 @@ h1{
 
 <div class="banner">
 
-<div class="topo">
-<h1>✈️ ENGENHARIA AERONÁUTICA</h1>
-<p>Feira de Ciências • 3º G</p>
-</div>
+    <details class="card">
+    <summary>📖 O que é?</summary>
 
-<img class="aviao"
-src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05">
+    <p>
+        A Engenharia Aeronáutica é o ramo da engenharia
+        responsável pelo projeto, desenvolvimento,
+        fabricação, testes e manutenção de aeronaves.
+    </p>
+</details>
 
-<div class="card">
-<h2>📖 O que é?</h2>
-<p>
-Ramo da engenharia responsável pelo projeto,
-desenvolvimento e manutenção de aeronaves.
-</p>
-</div>
+<details class="card">
+    <summary>⚙️ Princípios</summary>
+    <p>
+        Aerodinâmica, mecânica, eletrônica,
+        propulsão, estruturas e ciência dos materiais.
+    </p>
+</details>
 
-<div class="card">
-<h2>⚙️ Princípios</h2>
-<p>
-Aerodinâmica, mecânica, eletrônica e propulsão.
-</p>
-</div>
+<details class="card">
+    <summary>🎓 Formação</summary>
+    <p>
+        Graduação de aproximadamente 5 anos,
+        estágio e registro profissional.
+    </p>
+</details>
 
-<div class="card">
-<h2>🎓 Formação</h2>
-<p>
-Graduação de aproximadamente 5 anos,
-estágio e registro profissional.
-</p>
-</div>
+<details class="card">
+    <summary>📊 ENEM</summary>
+    <p>
+        A nota varia por universidade, geralmente
+        entre 700 e 800 pontos nas mais concorridas.
+    </p>
+</details>
 
-<div class="card">
-<h2>📊 ENEM</h2>
-<p>
-A nota varia por universidade, geralmente
-entre 700 e 800 pontos nas mais concorridas.
-</p>
-</div>
-
-<div class="card">
-<h2>🚀 Áreas de atuação</h2>
-<p>
-Aviação civil, militar, manutenção e setor espacial.
-</p>
-</div>
-
-</div>
+<details class="card">
+    <summary>🚀 Áreas de atuação</summary>
+    <p>
+        Aviação civil, militar, manutenção,
+        indústria aeroespacial e pesquisa.
+    </p>
+</details>
 
 </body>
 </html>
