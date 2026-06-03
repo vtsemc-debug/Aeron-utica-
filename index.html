@@ -29,6 +29,111 @@ body{
 details[open]{
     background:#12304d;
 }
+
+    /* TELA DE ABERTURA */
+
+.intro{
+    position:fixed;
+    inset:0;
+    background:#041524;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:sumirIntro 10s forwards;
+}
+
+.intro-texto{
+    text-align:center;
+    padding:20px;
+}
+
+.mensagem1,
+.mensagem2{
+    position:absolute;
+    width:90%;
+    left:50%;
+    transform:translateX(-50%);
+    opacity:0;
+}
+
+.mensagem1{
+    animation:fadeMensagem1 4s forwards;
+}
+
+.mensagem2{
+    animation:fadeMensagem2 4s forwards;
+    animation-delay:4s;
+}
+
+.mensagem1 h2,
+.mensagem2 h2{
+    color:#66b3ff;
+    font-size:clamp(1.8rem,5vw,3rem);
+}
+
+.mensagem2 p{
+    font-size:clamp(1rem,2.5vw,1.3rem);
+    line-height:1.8;
+}
+
+.banner{
+    opacity:0;
+    animation:mostrarConteudo 1.5s forwards;
+    animation-delay:8.5s;
+}
+
+@keyframes fadeMensagem1{
+    0%{
+        opacity:0;
+    }
+    15%{
+        opacity:1;
+    }
+    75%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+@keyframes fadeMensagem2{
+    0%{
+        opacity:0;
+    }
+    15%{
+        opacity:1;
+    }
+    75%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+@keyframes mostrarConteudo{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes sumirIntro{
+    0%,95%{
+        opacity:1;
+        visibility:visible;
+    }
+    100%{
+        opacity:0;
+        visibility:hidden;
+    }
+}
     
     .card{
     width:100%;
@@ -117,6 +222,30 @@ details p{
 </head>
 
 <body>
+
+    <div class="intro">
+
+    <div class="intro-texto">
+
+        <div class="mensagem1">
+            <h2>Bem-vindo à apresentação da Equipe 1</h2>
+            <p>3º G • Tarde</p>
+        </div>
+
+        <div class="mensagem2">
+            <h2>Apresentadores</h2>
+            <p>
+                Vitor Gomes<br>
+                Saulo Vitor<br>
+                Felipe Éden<br>
+                Ícaro Guilherme<br>
+                Isabelle Almeida
+            </p>
+        </div>
+
+    </div>
+
+</div>
 
 <div class="banner">
 
