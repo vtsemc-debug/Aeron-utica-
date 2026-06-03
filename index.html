@@ -1,17 +1,13 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+<title>Engenharia Aeronáutica</title>
 
-body{
-    margin:0;
-    background:#041524;
-    color:white;
-    font-family:Arial,sans-serif;
-}
+<style>
 
 html,
 body{
@@ -22,15 +18,17 @@ body{
     overflow-x:hidden;
 }
 
-    details{
-    transition:0.3s;
+body{
+    color:white;
+    font-family:Arial,sans-serif;
+
+    background:
+    radial-gradient(circle at top,
+    #0b2740 0%,
+    #041524 60%);
 }
 
-details[open]{
-    background:#12304d;
-}
-
-    /* TELA DE ABERTURA */
+/* INTRO */
 
 .intro{
     position:fixed;
@@ -40,131 +38,110 @@ details[open]{
     justify-content:center;
     align-items:center;
     z-index:9999;
-    animation:sumirIntro 10s forwards;
+
+    animation:sumirIntro 5s forwards;
 }
 
 .intro-texto{
     text-align:center;
     padding:20px;
+    width:100%;
+    max-width:500px;
+}
+
+.aviao{
+    width:100%;
+    border-radius:16px;
+    margin-bottom:25px;
+    box-shadow:0 0 25px rgba(102,179,255,.25);
 }
 
 .mensagem1,
 .mensagem2{
-    position:absolute;
     width:90%;
-    left:50%;
-    transform:translateX(-50%);
+    margin:auto;
     opacity:0;
 }
 
 .mensagem1{
-    animation:fadeMensagem1 4s forwards;
+    animation:fadeMensagem1 2.2s forwards;
 }
 
 .mensagem2{
-    animation:fadeMensagem2 4s forwards;
-    animation-delay:4s;
+    animation:fadeMensagem2 2.2s forwards;
+    animation-delay:2.2s;
 }
 
 .mensagem1 h2,
 .mensagem2 h2{
     color:#66b3ff;
     font-size:clamp(1.8rem,5vw,3rem);
+    margin-bottom:10px;
 }
 
+.mensagem1 p,
 .mensagem2 p{
-    font-size:clamp(1rem,2.5vw,1.3rem);
+    font-size:clamp(1rem,2.5vw,1.2rem);
     line-height:1.8;
 }
 
+/* CONTEÚDO */
+
 .banner{
     opacity:0;
-    animation:mostrarConteudo 1.5s forwards;
-    animation-delay:8.5s;
-}
+    animation:mostrarConteudo 1.2s forwards;
+    animation-delay:4.2s;
 
-@keyframes fadeMensagem1{
-    0%{
-        opacity:0;
-    }
-    15%{
-        opacity:1;
-    }
-    75%{
-        opacity:1;
-    }
-    100%{
-        opacity:0;
-    }
-}
-
-@keyframes fadeMensagem2{
-    0%{
-        opacity:0;
-    }
-    15%{
-        opacity:1;
-    }
-    75%{
-        opacity:1;
-    }
-    100%{
-        opacity:0;
-    }
-}
-
-@keyframes mostrarConteudo{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes sumirIntro{
-    0%,95%{
-        opacity:1;
-        visibility:visible;
-    }
-    100%{
-        opacity:0;
-        visibility:hidden;
-    }
-}
-    
-    .card{
-    width:100%;
-    box-sizing:border-box;
-    background:#0c2238;
-    margin:15px 0;
-    padding:15px;
-    border-radius:15px;
-    border-left:5px solid #66b3ff;
-    box-shadow:0 0 15px rgba(102,179,255,.15);
-}
-
-
-
-.banner{
     width:100%;
     min-height:100vh;
-    padding:20px;
     box-sizing:border-box;
+
+    padding:20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.topo{
+    text-align:center;
+    margin-bottom:30px;
 }
 
 h1{
-    text-align:center;
     color:#66b3ff;
     font-size:clamp(2rem,8vw,3rem);
     text-shadow:0 0 10px rgba(102,179,255,.5);
+    margin-bottom:10px;
 }
 
+/* CARDS */
+
+details{
+    transition:.3s;
+    overflow:hidden;
+}
+
+details[open]{
+    background:#12304d;
+    animation:abrir .3s ease;
+}
+
+.card{
+    width:100%;
+    box-sizing:border-box;
+
+    background:#0c2238;
+
+    margin:20px 0;
+    padding:20px;
+
+    border-radius:15px;
+    border-left:5px solid #66b3ff;
+
+    box-shadow:0 0 15px rgba(102,179,255,.15);
+}
 
 summary{
-    font-size:1.4rem;
+    font-size:1.3rem;
     font-weight:bold;
     color:#66b3ff;
     cursor:pointer;
@@ -187,35 +164,95 @@ details[open] summary::after{
 
 details p{
     margin-top:15px;
-    line-height:1.6;
+    line-height:1.9;
 }
 
-.topo{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.aviao{
-    display:block;
+.imagem-card{
     width:100%;
-    max-width:100%;
-    height:auto;
-    border-radius:15px;
-}
-    
 
-    .imagem-card{
-    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+
     border-radius:12px;
+
     margin-top:15px;
     margin-bottom:10px;
+
     box-shadow:0 0 15px rgba(102,179,255,.2);
 }
 
+/* ANIMAÇÕES */
 
-.card h2{
-    margin-top:0;
-    color:#66b3ff;
+@keyframes abrir{
+    from{
+        opacity:0.7;
+        transform:scale(0.98);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes fadeMensagem1{
+    0%{
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    75%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+@keyframes fadeMensagem2{
+    0%{
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    75%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+@keyframes mostrarConteudo{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes sumirIntro{
+    0%,95%{
+        opacity:1;
+        visibility:visible;
+    }
+
+    100%{
+        opacity:0;
+        visibility:hidden;
+    }
 }
 
 </style>
@@ -223,17 +260,23 @@ details p{
 
 <body>
 
-   <div class="intro">
+<!-- INTRO -->
+
+<div class="intro">
 
     <div class="intro-texto">
 
+        <img src="image/banner.jpg" class="aviao">
+
         <div class="mensagem1">
-            <h2>Bem-vindo à apresentação da Equipe 1</h2>
-            <p>3º G • Tarde</p>
+            <h2>✈️ Engenharia Aeronáutica</h2>
+            <p>Feira das Profissões</p>
         </div>
 
         <div class="mensagem2">
+
             <h2>Apresentadores</h2>
+
             <p>
                 Vitor Gomes<br>
                 Saulo Vitor<br>
@@ -241,100 +284,171 @@ details p{
                 Ícaro Guilherme<br>
                 Isabelle Almeida
             </p>
+
         </div>
 
     </div>
 
 </div>
 
+<!-- SITE -->
+
 <div class="banner">
 
     <div class="topo">
+
         <h1>✈️ ENGENHARIA AERONÁUTICA</h1>
-       <p style="font-size:0.9rem; opacity:0.85;">
-    Equipe 1 | 3°G
-</p>
+
+        <p style="font-size:0.95rem; opacity:.85;">
+            Equipe 1 • 3º G
+        </p>
+
     </div>
 
-    <details class="card" name="accordion">
-    <summary>📖 O que é?</summary>
+    <details class="card">
+
+        <summary>📖 O que é?</summary>
+
         <img src="image/oquee.jpg" class="imagem-card">
-        
-    <p>
-        A Engenharia Aeronáutica é o ramo da engenharia 
-        responsável pelo projeto, desenvolvimento, 
-        fabricação, testes e manutenção de aeronaves. 
-        Essa área busca criar aviões e helicópteros mais seguros, 
-        eficientes e tecnológicos, utilizando conhecimentos de matemática, 
-        física e computação. Seu trabalho é essencial para 
-        a evolução da aviação civil, militar e de pesquisa.
-    </p>
-</details>
 
-<details class="card" name="accordion">
-    <summary>⚙️ Princípios</summary>
-    <img src="image/principios.jpg" class="imagem-card">
-    
-    <p>
-        A Engenharia Aeronáutica baseia-se 
-        em diversas áreas do conhecimento. 
-        Entre elas estão a aerodinâmica
-        que estuda o movimento do ar ao redor das aeronaves; 
-        a mecânica, responsável pelas estruturas e sistemas; 
-        a eletrônica, utilizada nos instrumentos de navegação; 
-        e a ciência dos materiais, que busca materiais leves e resistentes.
-        Esses princípios garantem desempenho, segurança e eficiência 
-        durante o voo.
-    </p>
-</details>
+        <p>
+            A Engenharia Aeronáutica desenvolve e mantém:
 
-<details class="card" name="accordion">
-    <summary>🎓 Formação</summary>
-    <img src="image/formacao.jpg" class="imagem-card">
-      <p>Para atuar como engenheiro aeronáutico é necessário concluir uma graduação na área, 
-          que geralmente possui duração de cinco anos. 
-          Durante o curso, os estudantes aprendem disciplinas como:
-          física, cálculo, aerodinâmica e mecânica dos fluidos. 
-          Além disso, realizam projetos, estágios e atividades práticas 
-          que os preparam para o mercado de trabalho.
-    </p>
-</details>
+            <br><br>
 
-<details class="card" name="accordion">
-    <summary>📊 ENEM</summary>
-    <img src="image/enem.jpg" class="imagem-card">
-    <p>
-        O ingresso em cursos de Engenharia Aeronáutica 
-        pode ocorrer por meio do ENEM ou vestibulares específicos. 
-        As notas de corte variam conforme a instituição e a concorrência, 
-        mas normalmente exigem um desempenho elevado, principalmente em Matemática e Ciências da Natureza. 
-        Uma boa preparação é fundamental para conquistar uma vaga.
-    </p>
-</details>
+            ✈️ Aviões<br>
+            🚁 Helicópteros<br>
+            🚀 Tecnologias aeroespaciais
 
-<details class="card" name="accordion">
-    <summary>🚀 Áreas de atuação</summary>
-    <img src="image/atuacao.jpg" class="imagem-card">
-    <p>
-        O profissional de Engenharia Aeronáutica pode trabalhar em empresas de fabricação de aeronaves,
-        manutenção aeronáutica, pesquisa e desenvolvimento, segurança de voo e setor aeroespacial. 
-        Também existem oportunidades em órgãos governamentais, 
-        companhias aéreas e centros de pesquisa voltados para novas tecnologias.
-    </p>
-</details>
+            <br><br>
+
+            A área combina Matemática, Física e Computação
+            para criar aeronaves mais seguras e eficientes.
+        </p>
+
+    </details>
 
     <details class="card">
-    <summary>🌎 Curiosidades</summary>
+
+        <summary>⚙️ Princípios</summary>
+
+        <img src="image/principios.jpg" class="imagem-card">
+
+        <p>
+            A Engenharia Aeronáutica utiliza:
+
+            <br><br>
+
+            🌬️ Aerodinâmica<br>
+            ⚙️ Mecânica<br>
+            💻 Computação<br>
+            🔋 Eletrônica
+
+            <br><br>
+
+            Esses princípios garantem:
+            segurança, eficiência e desempenho durante o voo.
+        </p>
+
+    </details>
+
+    <details class="card">
+
+        <summary>🎓 Formação</summary>
+
+        <img src="image/formacao.jpg" class="imagem-card">
+
+        <p>
+            📚 Duração média: 5 anos
+
+            <br><br>
+
+            Principais matérias:
+
+            <br><br>
+
+            ➗ Cálculo<br>
+            🧪 Física<br>
+            🌪️ Aerodinâmica<br>
+            💧 Mecânica dos Fluidos
+
+            <br><br>
+
+            O curso também envolve projetos,
+            estágios e atividades práticas.
+        </p>
+
+    </details>
+
+    <details class="card">
+
+        <summary>📊 ENEM</summary>
+
+        <img src="image/enem.jpg" class="imagem-card">
+
+        <p>
+            O ingresso pode acontecer pelo ENEM
+            ou vestibulares específicos.
+
+            <br><br>
+
+            📈 A concorrência costuma ser alta.
+
+            <br><br>
+
+            As áreas mais importantes são:
+
+            <br><br>
+
+            ➗ Matemática<br>
+            🔬 Ciências da Natureza
+        </p>
+
+    </details>
+
+    <details class="card">
+
+        <summary>🚀 Áreas de atuação</summary>
+
+        <img src="image/atuacao.jpg" class="imagem-card">
+
+        <p>
+            O engenheiro aeronáutico pode atuar em:
+
+            <br><br>
+
+            ✈️ Fabricação de aeronaves<br>
+            🔧 Manutenção aeronáutica<br>
+            🛰️ Setor aeroespacial<br>
+            🔬 Pesquisa e desenvolvimento
+        </p>
+
+    </details>
+
+    <details class="card">
+
+        <summary>🌎 Curiosidades</summary>
+
         <img src="image/print.jpg" class="imagem-card">
-    <p>
-        A aviação moderna utiliza tecnologias desenvolvidas por engenheiros aeronáuticos para aumentar a segurança e reduzir o consumo de combustível.
-        Além disso, muitos conhecimentos da Engenharia Aeronáutica são aplicados em:
-        foguetes, satélites e veículos espaciais.
-        O Brasil também possui destaque mundial nesse setor 
-        graças ao desenvolvimento de aeronaves reconhecidas internacionalmente.
-    </p>
-</details>
+
+        <p>
+            🚀 Tecnologias da aviação também são usadas em foguetes e satélites.
+
+            <br><br>
+
+            🇧🇷 O Brasil possui destaque mundial
+            na fabricação de aeronaves.
+
+            <br><br>
+
+            ✈️ A engenharia aeronáutica ajuda a reduzir
+            consumo de combustível e aumentar a segurança aérea.
+        </p>
+
+    </details>
 
 </div>
+
 </body>
 </html>
+```
