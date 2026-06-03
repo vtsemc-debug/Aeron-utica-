@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -64,12 +64,12 @@ body{
 }
 
 .mensagem1{
-    animation:fadeMensagem1 2.2s forwards;
+    animation:fadeMensagem1 3.3s forwards;
 }
 
 .mensagem2{
-    animation:fadeMensagem2 2.2s forwards;
-    animation-delay:2.2s;
+    animation:fadeMensagem2 3.3s forwards;
+    animation-delay:3.3s;
 }
 
 .mensagem1 h2,
@@ -138,6 +138,14 @@ details[open]{
     border-left:5px solid #66b3ff;
 
     box-shadow:0 0 15px rgba(102,179,255,.15);
+}
+
+.card{
+    transition:.3s;
+}
+
+.card:active{
+    transform:scale(0.98);
 }
 
 summary{
@@ -266,7 +274,7 @@ details p{
 
     <div class="intro-texto">
 
-        <img src="image/banner.jpg" class="aviao">
+        <img src="image/banner.png" class="aviao">
 
         <div class="mensagem1">
             <h2>✈️ Engenharia Aeronáutica</h2>
